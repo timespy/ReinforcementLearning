@@ -23,9 +23,12 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/result.png" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Sarsa" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\asus\Desktop\毕设\学习用测试代码\QLearning_test\Q_learning" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\asus\Desktop\毕设\学习用测试代码\QLearning_test" />
     </key>
@@ -42,7 +45,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.qlearning">
+  <component name="RunManager" selected="Python.sarsa_lambda">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="QLearning_test" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -65,7 +68,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="pandas_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="panda_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="QLearning_test" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -75,7 +78,26 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pandas_test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/panda_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="qlearning (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="QLearning_test" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Q_learning" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Q_learning/qlearning.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -97,7 +119,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/qlearning.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\asus\Desktop\毕设\学习用测试代码\QLearning_test\Q_learning\qlearning.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -106,20 +128,36 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="qlearning_2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="sarsa" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="QLearning_test" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Sarsa" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\asus\Desktop\毕设\学习用测试代码\QLearning_test\qlearning.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Sarsa/sarsa.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="sarsa_lambda" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="QLearning_test" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Sarsa" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Sarsa/sarsa_lambda.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -130,9 +168,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.sarsa_lambda" />
+        <item itemvalue="Python.sarsa" />
+        <item itemvalue="Python.qlearning (1)" />
+        <item itemvalue="Python.panda_test" />
         <item itemvalue="Python.qlearning" />
-        <item itemvalue="Python.pandas_test" />
-        <item itemvalue="Python.qlearning_2" />
       </list>
     </recent_temporary>
   </component>
@@ -147,7 +187,8 @@
       <option name="presentableId" value="Default" />
       <updated>1585988193306</updated>
       <workItem from="1585988195376" duration="21721000" />
-      <workItem from="1586102886523" duration="6105000" />
+      <workItem from="1586102886523" duration="7825000" />
+      <workItem from="1586150887870" duration="9943000" />
     </task>
     <servers />
   </component>

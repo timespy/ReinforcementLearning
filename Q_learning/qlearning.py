@@ -1,5 +1,4 @@
 import gym
-import numpy
 import time
 import random
 import LineChart as dv
@@ -8,11 +7,10 @@ import pandas as pd
 
 
 class Q_learn:
-    def __init__(self, states, actions, epoches, discount=0.9, learning_rate=0.1,
+    def __init__(self, actions, epoches, discount=0.9, learning_rate=0.1,
                  greedy=0.9, max_iteration=100, fresh_time=0.1):
-        self.Q_table = pd.DataFrame(data=np.zeros((len(states), len(actions))), columns=actions, index=states)
+        self.Q_table = pd.DataFrame(columns=actions)
         self.actions = actions
-        self.states = states
         self.EPOCHES = epoches
         self.discount = discount
         self.lr = learning_rate
@@ -20,36 +18,24 @@ class Q_learn:
         self.max_iteration = max_iteration
         self.fresh_time = fresh_time
 
-    def exist_zero(self, state):
-        for act in self.actions:
-            if self.Q_table.loc[state, act] == 0:
-                return True
-        return False
+    def exist_state(self, state):
+        if state not in self.Q_table.index:
+            self.Q_table = self.Q_table.append(
+                pd.Series(
+                    [0] * len(self.actions),
+                    index=self.Q_table.columns,
+                    name=state,
+                )
+            )
 
     def choose_action(self, state):
-        if state not in self.states:
-            return self.actions[random.randint(0, len(self.actions)-1)]
+        self.exist_state(state)
+        if random.uniform(0, 1) < self.greedy:
+            qs = self.Q_table.loc[state, :]
+            action_ret = np.random.choice(qs[qs == np.max(qs)].index)
+            return action_ret
         else:
-            if random.uniform(0, 1) < self.greedy:
-                if self.exist_zero(state):
-                    return self.actions[random.randint(0, len(self.actions)-1)]
-                else:
-                    ret = None
-                    max_q = 0.0
-                    for act in self.actions:
-                        if self.Q_table.loc[state, act] > max_q:
-                            max_q = self.Q_table.loc[state, act]
-                            ret = act
-                    return ret
-            else:
-                return self.actions[random.randint(0, len(self.actions)-1)]
-
-    def maxQ(self, state):
-        max_q = 0.0
-        for act in self.actions:
-            if self.Q_table.loc[state, act] > max_q:
-                max_q = self.Q_table.loc[state, act]
-        return max_q
+            return self.actions[random.randint(0, len(self.actions)-1)]
 
     def rl(self, env):
         x = []
@@ -59,17 +45,21 @@ class Q_learn:
             count = 0
             ok = False
             for iteration in range(self.max_iteration):
+                env.render()
+
                 action = self.choose_action(observation)
                 new_state, reward, done, info = env.step(action)
+                self.exist_state(new_state)
                 self.Q_table.loc[observation, action] = (1 - self.lr) * self.Q_table.loc[observation, action]\
-                                                        + self.lr * (reward + self.discount * self.maxQ(new_state))
+                                                        + self.lr * \
+                                                        (reward + self.discount * self.Q_table.loc[new_state, :].max())
                 if done:
                     if reward == 1:
                         x.append(epoch)
                         y.append(count)
                         ok = True
                     break
-                env.render()
+
                 time.sleep(self.fresh_time)
                 count += 1
                 observation = new_state
@@ -89,7 +79,7 @@ class Q_learn:
 
 if __name__ == '__main__':
     env = gym.make('MazeEnv-v0')
-    test = Q_learn(env.getStates(), env.action_space, 150, fresh_time=0.1)
+    test = Q_learn(env.action_space, 100, fresh_time=0.1)
     x, y = test.rl(env)
     test.output_Q_table()
     pic = dv.LineChart()
